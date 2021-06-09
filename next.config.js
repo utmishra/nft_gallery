@@ -5,4 +5,7 @@ module.exports = {
       assetPath: '/assets?owner=OWNER_ID'
     }
   },
+  images: {
+    domains: ['lh3.googleusercontent.com'],
+  }
 }

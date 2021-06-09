@@ -1,16 +1,13 @@
-import styles from '../../styles/Gallery.module.css';
-
-import Image from 'next/image';
 import { useRouter } from 'next/router';
-import classNames from 'classnames';
 
 import useNfts from '../../lib/useNfts';
 import NftGallery from '../components/NftGallery';
+import Owner from '../components/Owner';
 
 export default function Gallery() {
   const router = useRouter()
   const { authorId } = router.query
-  const { nfts, isLoading, isError } = useNfts(authorId);
+  const { data, isLoading, isError } = useNfts(authorId);
 
   if(authorId == undefined) {
     return (
@@ -32,7 +29,10 @@ export default function Gallery() {
     )
   }
 
-  return (
-    <NftGallery data={nfts} />
-  )
+    return (
+      <>
+        <Owner owner={data.assets[0].owner} />
+        <NftGallery authorId={authorId} nfts={data.assets} />
+      </>
+    )
 }
