@@ -1,5 +1,5 @@
 export default function Owner(props) {
   return (
-    <h1>{props.owner.user.username}</h1>
+    <h1 className={props.className}>{props.owner.user.username}</h1>
   )
 }

@@ -1,8 +1,13 @@
+@font-face {
+  font-family: 'NeueBit';
+  src: url('/assets/fonts/NeueBit-Bold.otf');
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: 'NeueBit'
+  font-family: 'NeueBit';  
 }
 
 a {

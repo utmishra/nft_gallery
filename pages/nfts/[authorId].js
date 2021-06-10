@@ -1,4 +1,8 @@
+import styles from '../../styles/Home.module.css';
+
 import { useRouter } from 'next/router';
+import Container from '@material-ui/core/Container';
+import Grid from '@material-ui/core/Grid';
 
 import useNfts from '../../lib/useNfts';
 import NftGallery from '../components/NftGallery';
@@ -30,9 +34,13 @@ export default function Gallery() {
   }
 
     return (
-      <>
-        <Owner owner={data.assets[0].owner} />
+      <Container className={styles.container} maxWidth="xs">
+        <Grid container>
+          <Grid item xs={12}>
+            <Owner className={styles['owner-name']} owner={data.assets[0].owner} />
+          </Grid>
+        </Grid>
         <NftGallery authorId={authorId} nfts={data.assets} />
-      </>
+      </Container>
     )
 }
