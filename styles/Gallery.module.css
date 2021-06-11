@@ -16,16 +16,67 @@
 }
 
 .modal {
+  max-width: 385px;
   width: 385px;
-  height: 700px;
+  height: fit-content;
   border-radius: 10px;
+}
+
+.card-root {
+  min-height: 700px;
+  font-family: 'SF Pro Display' !important;
+}
+
+.card-item {
+  height: fit-content;
 }
 
 .card-header {
   height: 38px;
+  width: 100%;
   padding: 0 !important;
+}
+
+.card-description {
+  height: 50px;
+  overflow: hidden;
+  margin: 17px 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .card-image {
   margin: 0 auto;
+  width: 385px !important;
+}
+
+.card-image-container {
+  padding: 0 !important;
+  width: 385px !important;
+}
+
+.meta {
+  margin: 17px 0;
+}
+
+.post-meta-grid-item {
+  align-self: center;
+}
+
+.post-meta-username {
+  font-weight: 500;
+}
+
+.card-button {
+  background-color: #464646 !important;
+  color: white !important;
+  border-radius: 5px !important;
+  margin: 17px 0 !important;
+  height: 60px;
+  text-align: center;
+  padding: 17px 0 !important;
+  width: 100%;
+  text-transform: none !important;
+  font-size: 18px !important;
+  font-weight: 300 !important;
 }

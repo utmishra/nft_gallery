@@ -56,8 +56,9 @@ h3 {
 
 .MuiCardHeader-title {
   font-size: 18px !important;
+  line-height: 21px !important;
   text-align: center;
-  font-family: 'SF Pro Display';
+  font-family: 'SF Pro Display' !important;
   font-weight: 500;
   white-space: nowrap;
   overflow: hidden;
@@ -68,11 +69,12 @@ h3 {
 
 .MuiCardContent-root {
   font-size: 14px !important;
-  text-align: center;
-  font: 'SF Pro Display';
-  font-weight: 300;
-  height: 100px;
-  overflow: scroll;
-  padding: 10px 0 !important;
-  margin: 10px;
+  line-height: 16px !important;
+  font-family: 'SF Pro Display' !important;
+  font-weight: 300 !important;
+  height: fit-content;
+  overflow: hidden;
+  padding: 0 !important;
+  margin: 0 21px;
+  color: #5A5A5A;  
 }

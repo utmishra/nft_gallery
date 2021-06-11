@@ -1,15 +1,17 @@
 import styles from '../styles/Gallery.module.css';
 import Image from 'next/image';
 
-import { Box, Grid, Container, Card, CardHeader, CardMedia, CardContent, IconButton, Typography, CardActions } from '@material-ui/core/';
+import { Box, Grid, Container, Card, CardHeader, CardContent, IconButton, Typography, CardActions, Button } from '@material-ui/core/';
 import CancelIcon from '@material-ui/icons/Cancel';
+
+import PostMeta from './PostMeta';
 
 export default function SingleNft(props) {
   return (
     <Grid container direction="row" justify="center" alignItems="center" className={styles.modal}>
-      <Grid item xs={10} lg={3}>
+      <Grid item xs={12} className={styles['card-item']} >
         <Box>
-          <Card>
+          <Card className={styles['card-root']}>
             <CardHeader
               title={props.data.name}
               className={styles['card-header']}
@@ -19,16 +21,23 @@ export default function SingleNft(props) {
                 </IconButton>
               }
             />
-            <Grid container direction="row" justify="center">
-              <Grid item xs="10">
-                <Image className={styles['card-image']} height={320} width={320} src={props.data.image_url} />
-              </Grid>
-            </Grid>
+            <Container fluid className={styles['card-image-container']}>
+                <Image className={styles['card-image']} layout="fixed" height={385} width={385} src={props.data.image_url} />
+            </Container>
             <CardContent>
               <Typography>
-                {props.data.description}
+                <Box className={styles['card-description']}>
+                  {props.data.description}
+                </Box>                
               </Typography>
+              <PostMeta type="creator" profile={props.data.creator.profile_img_url} username={props.data.creator.user.username} />
+              <PostMeta type="owner" profile={props.data.owner.profile_img_url} username={props.data.owner.user.username} />
             </CardContent>
+            <CardActions>
+              <Button className={styles['card-button']}>
+                Bid on Foundation
+              </Button>
+            </CardActions>
           </Card>          
         </Box>
       </Grid>
