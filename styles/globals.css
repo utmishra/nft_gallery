@@ -29,6 +29,24 @@ a {
   box-sizing: border-box;
 }
 
+h1 {
+  margin: 10px;
+}
+
+h2 {
+  color: white;
+  font-size: 32px;
+  margin: 10px;
+  text-decoration: underline;
+}
+
+h3 {
+  font-size: 24px;
+  color: white;
+  text-decoration: underline;
+  margin: 0;
+}
+
 .icon-box {
   margin: 10px auto;
 }
