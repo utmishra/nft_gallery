@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 
 import useSingleNft from '../../../lib/useSingleNft';
-import SingleNft from '../../components/SingleNft';
+import SingleNft from '../../../components/SingleNft';
 
 export default function Asset() {
   const router = useRouter()

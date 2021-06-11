@@ -6,8 +6,8 @@ import Image from 'next/image';
 import { Container, Grid, Box } from '@material-ui/core';
 
 import useNfts from '../../lib/useNfts';
-import NftGallery from '../components/NftGallery';
-import Owner from '../components/Owner';
+import NftGallery from '../'
+import Owner from '../../components/Owner';
 
 export default function Gallery() {
   const router = useRouter()
@@ -94,4 +94,17 @@ export default function Gallery() {
       <NftGallery authorId={authorId} nfts={data.assets} contactAddress={data.assets[0].asset_contract.address} />
     </Container>
   )
+}
+
+export async function getStaticPaths() {
+  return {
+    paths: [],
+    fallback: true
+  }
+}
+
+export async function getStaticProps() {
+  return {
+    fallback: true
+  }
 }

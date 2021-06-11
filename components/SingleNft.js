@@ -1,4 +1,4 @@
-import styles from '../../styles/Gallery.module.css';
+import styles from '../styles/Gallery.module.css';
 import Image from 'next/image';
 
 import { Box, Grid, Container, Card, CardHeader, CardMedia, CardContent, IconButton, Typography, CardActions } from '@material-ui/core/';

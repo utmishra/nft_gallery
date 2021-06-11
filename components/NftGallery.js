@@ -1,4 +1,4 @@
-import styles from '../../styles/Gallery.module.css';
+import styles from '../styles/Gallery.module.css';
 
 import Image from 'next/image';
 import { Grid, Box, Modal } from '@material-ui/core';
