@@ -18,3 +18,7 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.icon-box {
+  margin: 10px auto;
+}

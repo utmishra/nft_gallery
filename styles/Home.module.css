@@ -8,9 +8,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 100%;
   background: url('/assets/images/bg.jpg');
-  border-radius: 5%;
+  background-repeat: repeat;
 }
 
 /* screen texture */
@@ -50,6 +50,19 @@
   color: white;
   text-transform: uppercase;
   font-size: main-title;
+}
+
+.icons {
+  height: 54px;
+  border: 0.51px solid;
+  background-color: rgba(86, 86, 86, 0.5);
+  border-image-source: linear-gradient(0deg, #4B4B4B, #4B4B4B),
+  linear-gradient(180deg, #E4E4E4 0%, rgba(255, 255, 255, 0) 100%);
+  padding: 10px 0;
+}
+
+.single-icon {
+  margin: 0 5px !important;
 }
 
 @media (max-width: 600px) {
