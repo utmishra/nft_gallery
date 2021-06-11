@@ -8,11 +8,13 @@ import { Container, Grid, Box } from '@material-ui/core';
 import useNfts from '../../lib/useNfts';
 import NftGallery from '../../components/NftGallery';
 import Owner from '../../components/Owner';
+import Empty from '../../components/Empty';
 
 export default function Gallery() {
   const router = useRouter()
   const { authorId } = router.query;
   const { data, isLoading, isError } = useNfts(authorId);
+
 
   if(authorId == undefined) {
     return (
@@ -24,13 +26,13 @@ export default function Gallery() {
 
   if(isLoading) {
     return (
-      <div>Loading..</div>
+      <Empty message="Loading.." />
     )
   }
 
   if(isError) {
     return (
-      <div>Oops.. Something went wrong! Please try again!</div>
+      <LoaEmptyding message="Oops.. Something went wrong! Please try again!" />
     )
   }
 

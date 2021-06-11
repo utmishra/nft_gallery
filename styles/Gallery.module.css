@@ -37,12 +37,22 @@
   padding: 0 !important;
 }
 
-.card-description {
-  height: 50px;
+.card-description {  
   overflow: hidden;
   margin: 17px 0;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+}
+
+.card-description-collapsed {
+  height: 50px;
+}
+
+.card-description-expanded {
+  height: fit-content;  
+}
+
+.card-description-action {
+  color: rgb(29, 115, 181);
+  cursor: pointer;
 }
 
 .card-image {
