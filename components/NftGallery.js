@@ -43,7 +43,7 @@ export default function NftGallery(props) {
         onClose={handleClose}
         style={{display:'flex',alignItems:'center',justifyContent:'center'}}
       >
-        <ModalBody data={currentNft} />
+        <ModalBody data={currentNft} handleClose={handleClose} />
       </Modal>
     </>
   )

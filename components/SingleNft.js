@@ -14,7 +14,7 @@ export default function SingleNft(props) {
               title={props.data.name}
               className={styles['card-header']}
               action={
-                <IconButton fontSize="small" aria-label="close">
+                <IconButton fontSize="small" aria-label="close" onClick={props.handleClose}>
                   <CancelIcon style={{ color: 'rgba(244, 107, 93, 1)' }} />
                 </IconButton>
               }
