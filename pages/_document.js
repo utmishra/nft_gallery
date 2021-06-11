@@ -10,7 +10,7 @@ class Common extends Document {
             rel="stylesheet"
           />
           <meta name="description" content="NFT Gallery to view assets for any owner" />
-          <link rel="icon" href="assets/images/favicon.ico" />
+          <link rel="icon" href="/assets/images/favicon.ico" />
         </Head>
         <body>
           <Main />
