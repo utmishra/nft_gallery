@@ -50,11 +50,20 @@ h3 {
   margin: 10px auto;
 }
 
+.MuiCardHeader-content {
+  width: 80%;
+}
+
 .MuiCardHeader-title {
   font-size: 18px !important;
   text-align: center;
-  font: 'SF Pro Display';
+  font-family: 'SF Pro Display';
   font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0 5px;
+  width: 100%;
 }
 
 .MuiCardContent-root {
@@ -62,4 +71,8 @@ h3 {
   text-align: center;
   font: 'SF Pro Display';
   font-weight: 300;
+  height: 100px;
+  overflow: scroll;
+  padding: 10px 0 !important;
+  margin: 10px;
 }
