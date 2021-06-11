@@ -29,7 +29,7 @@ export default function NftGallery(props) {
         {
           props.nfts.map((nft) => {
             return (
-              <Grid key={nft.token_id} item xs={12} sm={6} lg={2}>
+              <Grid key={nft.token_id} item xs={6} sm={6} lg={2}>
                 <Box onClick={() => handleClick(nft)} className={styles['single-image']}>
                   <Image className={styles['nft-image']} width={182.7} height={182.7} src={nft.image_thumbnail_url}/>
                 </Box>              

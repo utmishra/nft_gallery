@@ -8,11 +8,11 @@
 .single-image {
   height: 183px;
   width: fit-content;
-  margin: 9px auto;
+  margin: 9px 1px;
   text-align: center;
   cursor: pointer;
   overflow: hidden;
-  border: 4.07187px solid #FFFFFF;
+  border: 2px solid #FFFFFF;
 }
 
 .modal {
