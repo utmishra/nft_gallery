@@ -4,9 +4,24 @@
 
 .single-image {
   height: 183px;
-  width: 183px;
+  width: 100%;
   border: 4.07187px solid #FFFFFF;
   margin: 9px auto;
   text-align: center;
   cursor: pointer;
+}
+
+.modal {
+  width: 385px;
+  height: 700px;
+  border-radius: 10px;
+}
+
+.card-header {
+  height: 38px;
+  padding: 0 !important;
+}
+
+.card-image {
+  margin: 0 auto;
 }

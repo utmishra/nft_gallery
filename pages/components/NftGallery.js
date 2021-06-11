@@ -1,65 +1,50 @@
 import styles from '../../styles/Gallery.module.css';
 
 import Image from 'next/image';
-import { makeStyles, Grid, Box, Modal } from '@material-ui/core';
-import { useEffect, useState, useRef } from 'react';
+import { Grid, Box, Modal } from '@material-ui/core';
+import { forwardRef, useState } from 'react';
 import SingleNft from './SingleNft';
-
-const useStyles = makeStyles({
-  root: {
-    position: 'relative',
-  },
-  backdrop: {
-    position: 'relative',
-    background: 'none',
-    filter: 'blur'
-  },
-});
 
 export default function NftGallery(props) {
   const [ isModalOpen, setModalOpen ] = useState(false);
-  const [ tokenId, setTokenId ] = useState(null);
-  const contactAddress = useRef(props.contactAddress);
-  const nft = useRef(null);
+  const [currentNft, setCurrentNft ]  = useState(null);
 
-  useEffect(() => {
-    if(tokenId != null) {
-      nft.current = 
-      setModalOpen(true);
-    }
-  }, [tokenId])
-
-  const handleClose = () => {
-    setModalOpen(false);
-    setTokenId(null);
+  const handleClick = (nft) => {
+    setCurrentNft(nft);
+    setModalOpen(true);
   }
 
-  // const modalBody = (props) => (
-  //   <SingleNft data={props.nft} contactAddress={contactAddress.current} tokenId={tokenId} />
-  // )
+  const handleClose = () => {
+    setCurrentNft(null);
+    setModalOpen(false);
+  }
 
-  const classes = useStyles();
+  const ModalBody = forwardRef((props, ref) => (
+    <SingleNft ref={ref} {...props} />
+  ))
   
-  return (    
-    <Grid container direction="row" justify="space-between">
-      {
-        props.nfts.map((nft) => {
-          return (
-            <Grid key={nft.token_id} item xs={12} sm={6} lg={2}>
-              <Box onClick={() => setTokenId(nft.token_id)} className={styles['single-image']}>
-                <Image width={182.7} height={182.7} src={nft.image_thumbnail_url}/>
-              </Box>
-              <Modal
-                open={isModalOpen}
-                onClose={handleClose}
-                disablePortal
-              >
-                <SingleNft data={nft} />
-              </Modal>
-            </Grid>     
-          )
-        })
-      }
-    </Grid>
+  return ( 
+    <>
+      <Grid container direction="row" justify="space-between">
+        {
+          props.nfts.map((nft) => {
+            return (
+              <Grid key={nft.token_id} item xs={12} sm={6} lg={2}>
+                <Box onClick={() => handleClick(nft)} className={styles['single-image']}>
+                  <Image width={182.7} height={182.7} src={nft.image_thumbnail_url}/>
+                </Box>              
+              </Grid>     
+            )
+          })
+        }
+      </Grid>
+      <Modal
+        open={isModalOpen}
+        onClose={handleClose}
+        style={{display:'flex',alignItems:'center',justifyContent:'center'}}
+      >
+        <ModalBody data={currentNft} />
+      </Modal>
+    </>
   )
 }

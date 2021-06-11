@@ -65,7 +65,6 @@ export default function Gallery() {
     }
   ]
 
-  console.log(mediaData);
 
   return (
     <Container className={styles.container} maxWidth="lg">
