@@ -6,12 +6,12 @@ import Image from 'next/image';
 import { Container, Grid, Box } from '@material-ui/core';
 
 import useNfts from '../../lib/useNfts';
-import NftGallery from '../'
+import NftGallery from '../../components/NftGallery';
 import Owner from '../../components/Owner';
 
 export default function Gallery() {
   const router = useRouter()
-  const { authorId } = router.query
+  const { authorId } = router.query;
   const { data, isLoading, isError } = useNfts(authorId);
 
   if(authorId == undefined) {
@@ -98,13 +98,17 @@ export default function Gallery() {
 
 export async function getStaticPaths() {
   return {
-    paths: [],
+    paths: [{
+      params: { authorId: '0x334022D77BFc9e8Aa5B34907873457c545d9faF2' }
+    }],
     fallback: true
   }
 }
 
 export async function getStaticProps() {
   return {
-    fallback: true
+    props: {
+      authorId: '0x334022D77BFc9e8Aa5B34907873457c545d9faF2'
+    }
   }
 }

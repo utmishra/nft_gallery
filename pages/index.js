@@ -13,3 +13,13 @@ export default function Home(props) {
     </div>
   )
 }
+
+
+export async function getStaticProps() {
+  return {
+    redirect: {
+      destination: '/nfts/0x334022D77BFc9e8Aa5B34907873457c545d9faF2',
+      permanent: false
+    }
+  }
+}
