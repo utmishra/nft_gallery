@@ -1,0 +1,2 @@
+@value fontSizes: './typography.css';
+@value main-title, nft-title, nft-description from fontSizes;

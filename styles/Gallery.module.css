@@ -1,14 +1,18 @@
+@value fontSizes: './typography.css';
+@value main-title, nft-title, nft-description from fontSizes;
+
 .item {
   margin-bottom: 18px;
 }
 
 .single-image {
   height: 183px;
-  width: 100%;
-  border: 4.07187px solid #FFFFFF;
+  width: fit-content;
   margin: 9px auto;
   text-align: center;
   cursor: pointer;
+  overflow: hidden;
+  border: 4.07187px solid #FFFFFF;
 }
 
 .modal {

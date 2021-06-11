@@ -11,15 +11,14 @@ export default function SingleNft(props) {
         <Box>
           <Card>
             <CardHeader
+              title={props.data.name}
               className={styles['card-header']}
               action={
                 <IconButton fontSize="small" aria-label="close">
                   <CancelIcon style={{ color: 'rgba(244, 107, 93, 1)' }} />
                 </IconButton>
               }
-            >
-              {props.data.name}
-            </CardHeader>
+            />
             <Grid container direction="row" justify="center">
               <Grid item xs="10">
                 <Image className={styles['card-image']} height={320} width={320} src={props.data.image_url} />

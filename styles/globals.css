@@ -3,6 +3,16 @@
   src: url('/assets/fonts/NeueBit-Bold.otf');
 }
 
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('/assets/fonts/SF-Pro-Display-Light.otf');
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('/assets/fonts/SF-Pro-Display-Medium.otf');
+}
+
 html,
 body {
   padding: 0;
@@ -21,4 +31,18 @@ a {
 
 .icon-box {
   margin: 10px auto;
+}
+
+.MuiCardHeader-title {
+  font-size: 18px !important;
+  text-align: center;
+  font: 'SF Pro Display';
+  font-weight: 500;
+}
+
+.MuiCardContent-root {
+  font-size: 14px !important;
+  text-align: center;
+  font: 'SF Pro Display';
+  font-weight: 300;
 }
